@@ -1,13 +1,39 @@
-body {
+html, body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(135deg, #6dd5fa, #2980b9);
-    min-height: 100vh;
-    color: white;
+    padding: 0;
+    height: 100%;
 }
 
-h1 { margin-top: 20px; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #050509; /* base dark */
+}
+
+/* Optional: glowing grid effect */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center, rgba(0,255,255,0.15) 0%, transparent 60%),
+        linear-gradient(rgba(0,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.06) 1px, transparent 1px);
+
+    background-size: auto, 40px 40px, 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Glow effect for title */
+h1 {
+    margin-top: 20px;
+    text-shadow: 0 0 10px cyan, 0 0 20px #00f7ff;
+}
 
 button {
     padding: 10px 20px;
